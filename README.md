@@ -13,7 +13,7 @@
  INSTALLATION: 
  
        Change the DDIRNAME in qn.c to point to your directory. make the program.
-       ALSO create the alias in the .bashrc for qn and qnl, like so:
+       ALSO create the alias in the .bashrc (or equivalent) for qn and qnl, like so:
                alias qn='//home/yourdirectory/Code/qn/qn';
                alias qnl='//home/yourdirectory/Code/qn/qnl';
        ALSO edit qnl and correctly point that to the directory. And then chmod it if you have to.
