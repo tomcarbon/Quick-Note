@@ -1,12 +1,14 @@
- QUICK NOTE
+ **QUICK NOTE -- save and recall your ideas instantly and reliably**
 
- OVERVIEW:
+ **OVERVIEW:**
 
                I believed I was having good thoughts, but I wasn't able to effectively record
                them before I forgot them, and many thoughts I thought were good were lost. 
                Often I would have a stream of thoughts, but the quality of that stream was compromised
                because I was looking for a pencil, or searching for a post-it or notepad, or the pen 
-               was out of ink, or I was writing too slowly. So I wrote this program, originally around 2009.
+               was out of ink, or I was writing too slowly. So I wrote this program, originally around 2009,
+               I've been using it ever since, and I thought maybe it's useful to other folks, too, so 
+               here it is.
 
  Quick Note is comprised of the following two programs:
  
