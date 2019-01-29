@@ -3,10 +3,10 @@
  OVERVIEW:
 
                I believed I was having good thoughts, but I wasn't able to effectively record
- them before I forgot them, and many thoughts I thought were good were lost. 
- Often I would have a stream of thoughts, but the quality of that stream was compromised
- because I was looking for a pencil, or searching for a post-it or notepad, or the pen was out of ink, or
- I was writing too slowly.
+               them before I forgot them, and many thoughts I thought were good were lost. 
+               Often I would have a stream of thoughts, but the quality of that stream was compromised
+               because I was looking for a pencil, or searching for a post-it or notepad, or the pen was out of ink, or
+                I was writing too slowly.
 
  Quick Note is comprised of the following two programs:
  
