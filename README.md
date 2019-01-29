@@ -10,12 +10,12 @@
                I've been using it ever since, and I thought maybe it's useful to other folks, too, so 
                here it is.
 
- Quick Note is comprised of the following two programs:
+ **Quick Note is comprised of the following two programs:**
  
                qn              - make a quick note.
                qnl (script)    - display all quick notes (qnl="Quick Note Look").
         
- INSTALLATION: 
+ **INSTALLATION: **
  
        Change the DDIRNAME in qn.c to point to your directory. make the program.
        ALSO create the alias in the .bashrc (or equivalent) for qn and qnl, like so:
@@ -23,12 +23,12 @@
                alias qnl='//home/yourdirectory/Code/qn/qnl';
        ALSO edit qnl and correctly point that to the directory. And then chmod it if you have to.
 
- TO USE qn: 
+ **TO USE qn:**
  
        1) Open a terminal window (e.g.: Ctl+Atl+T).
        2) Type qn and hit return.
        3) Type or copy/paste your message and hit return.
- TO USE qnl:
+ **TO USE qnl:**
  
        1) Open a terminal window.
        2) Type qnl and hit return. 
@@ -37,11 +37,11 @@
  qn and qnl do not use command line arguments. qn will display help information 
  if any arguments are given to it.
 
- HOW IT WORKS: 
+ **HOW IT WORKS: **
  
  qn saves a little .txt file in its directory. qnl displays all those files to the screen. 
  
- ENJOY:
+ **ENJOY:**
  
  May you find this program useful.  
  Tom Carbon 20190128. Tip Jar: https://dogepal.com/index.html?DPC=TCARBON#DPC
