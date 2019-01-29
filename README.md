@@ -1,9 +1,12 @@
  QUICK NOTE
 
  OVERVIEW:
- 
-       qn is a simple little C program, a LINUX terminal program, designed to do one thing:
-               Record that thought quickly and permanently. 
+
+               I believed I was having good thoughts, but I wasn't able to effectively record
+ them before I forgot them, and many thoughts I thought were good were lost. 
+ Often I would have a stream of thoughts, but the quality of that stream was compromised
+ because I was looking for a pencil, or searching for a post-it or notepad, or the pen was out of ink, or
+ I was writing too slowly.
 
  Quick Note is comprised of the following two programs:
  
@@ -36,11 +39,7 @@
  
  qn saves a little .txt file in its directory. qnl displays all those files to the screen. 
  
- RAMBLE: 
+ ENJOY:
  
- I believed I was having good thoughts, but I wasn't able to effectively record
- them before I forgot them, and many thoughts I thought were good were lost. 
- Often I would have a stream of thoughts, but the quality of that stream was compromised
- because I was looking for a pencil, or searching for a post-it or notepad, or the pen was out of ink, or
- I was writing too slowly. So I wrote this program, sometime before the year 2009, and cleaned it up a bit today. 
- May you find it useful. Tom Carbon 20190128. Tip Jar: https://dogepal.com/index.html?DPC=TCARBON#DPC
+ May you find this program useful.  
+ Tom Carbon 20190128. Tip Jar: https://dogepal.com/index.html?DPC=TCARBON#DPC
