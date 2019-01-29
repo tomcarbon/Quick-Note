@@ -37,7 +37,7 @@
  qn and qnl do not use command line arguments. qn will display help information 
  if any arguments are given to it.
 
- **HOW IT WORKS: **
+ **HOW IT WORKS:**
  
  qn saves a little .txt file in its directory. qnl displays all those files to the screen. 
  
