@@ -33,6 +33,7 @@
        1) Open a terminal window.
        2) Type qnl and hit return. 
        3) All of your qn messages will be displayed.
+       4) Of course, you can use grep at the command line. For instance, if you want to see all your QuickNote messages with the word 'foo' in it, you could do: qnl | grep foo
 
  qn and qnl do not use command line arguments. qn will display help information 
  if any arguments are given to it.
