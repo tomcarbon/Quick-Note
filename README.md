@@ -5,7 +5,7 @@
                qn              - make a quick note.
                qnl (script)    - display all quick notes (qnl="Quick Note Look").
         
- **INSTALLATION: **
+ **INSTALLATION:**
  
        Change the DDIRNAME in qn.c to point to your directory. make the program.
        ALSO create the alias in the .bashrc (or equivalent) for qn and qnl, like so:
