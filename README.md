@@ -50,6 +50,8 @@
 
  
  **ENJOY:**
+
+The idea behind quick-note is now a website: https://q-note.com
  
  May you find this program useful.  
- Tom Carbon 20200119
+ Tom Carbon 20200417
