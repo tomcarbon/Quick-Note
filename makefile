@@ -2,6 +2,8 @@ TARGET = qn
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall
+INSTALL_DIR = /usr/local/bin
+USER_DATA_DIR = .qn
 
 .PHONY:	clean	all	default
 
@@ -18,7 +20,13 @@ HEADERS = $(wildcard *.h)
 
 $(TARGET):	$(OBJECTS)
 	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
+	mkdir -p -m 0755 $${HOME}/$(USER_DATA_DIR)
 
 clean:
 	-rm -f *.o
 	-rm -f $(TARGET)
+
+install:
+	cp qn $(INSTALL_DIR)
+	chmod 755 qnl
+	cp qnl $(INSTALL_DIR)

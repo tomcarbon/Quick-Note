@@ -15,6 +15,11 @@
 #include <termios.h>
 #include <sys/types.h>
 #include <sys/time.h>
+#include <sys/stat.h>
+#include <pwd.h>
+
+#define USER_DATA_DIR ".qn"
+#define TCC_FILEMAX	99999	// # files to have for tcc00000.txt
 
 /****************************************************
 * FUNCTION DECLARATIONS from tomutils.h
@@ -23,6 +28,7 @@ void make_time_and_date(void);   // print out the date
 long atolnum(char *,long);	// Convert long digits of stg to long value.
 long kbhit(void);
 void nonblock(long sstate); 	// support for kbhit()
+int dirExists(const char *);	// 1 if exists, 0 if not
 #define NB_ENABLE 1		// for function nonblock
 #define NB_DISABLE 2 		// for function nonblock
 
@@ -36,7 +42,6 @@ typedef struct tagUVGLOB
 	char 		tempbuf[1000];
 	long today_date;		// yyymmdd date of today 
 	long today_time;		// hhsstt time of today
-	char pwd[256];			// present working directory
 } UVGLOB;
  
 #ifdef MMAIN

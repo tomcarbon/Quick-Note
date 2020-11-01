@@ -1,2 +1,2 @@
 #!/bin/bash
-cat //home/yourdirectory/Code/qn/tcc*.txt
+cat ~/.qn/*.txt

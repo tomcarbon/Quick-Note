@@ -1,22 +1,15 @@
 /***********************************************************************
-* (This is the top of qn.c)
+* qn.c
 * QUICK NOTE
 *
 * OVERVIEW:
-*	qn is a simple little C program, a LINUX terminal program, designed to do one thing:
+*	qn is a simple C program, a LINUX terminal program, designed to do one thing:
 *		Record that thought quickly and permanently. 
 *
 *	Quick Note is comprised of the following two programs:
 *		qn		- make a quick note.
 *		qnl (script) 	- display all quick notes (qnl="Quick Note Look").
 * 	 
-* INSTALLATION: 
-*	Change the DDIRNAME (see in the C code below) to point to your directory. make the program.
-*	ALSO create the alias in the .bashrc for qn and qnl, like so:
-*		alias qn='//home/yourdirectory/Code/qn/qn';
-*		alias qnl='//home/yourdirectory/Code/qn/qnl';
-*	ALSO edit qnl and correctly point that to the directory. And then chmod it if you have to.
-*
 * TO USE qn: 
 * 	1) Open a terminal window (e.g.: Ctl+Atl+T).
 * 	2) Type qn and hit return.
@@ -36,33 +29,39 @@
 * Often I would have a stream of thoughts, but the quality of that stream was compromised
 * because I was looking for a pencil, or searching for a post-it or notepad, or the pen was out of ink, or
 * I was writing too slowly. So I wrote this program, sometime before the year 2009, and wrote this intro today.
-* May you find it useful. Tom Carbon 20190128
+*
+* May you find it useful. Tom Carbon 20201101
 * Tip Jar: https://dogepal.com/index.html?DPC=TCARBON#DPC
 *************************************************************************/
-
-// MODIFY THIS LINE BELOW:
-// MODIFY THIS LINE BELOW:
-// MODIFY THIS LINE BELOW:
-#define DDIRNAME "//home/yourdirectory/Code/qn"
-
-
-
-
 #define MMAIN 1
 #include "stuff.h"
 
-#define TCC_FILEMAX	99999	// # files to have for tcc00000.txt
+
 int main(int argc, char *argv[])
 {
 long i;
 FILE *fin;
 char *pret;
 long tcclatestfile;
+char user_directory_path[500];
+const char *homedir;
 
+if ((homedir = getenv("HOME")) == NULL) {
+    homedir = getpwuid(getuid())->pw_dir;
+}
+
+sprintf(user_directory_path,"%s/%s", homedir, USER_DATA_DIR);
+printf("dirname = %s", user_directory_path);
+if (dirExists(user_directory_path)) {
+	printf("directory DOES exist");
+} else {
+	printf("\nFATAL ERROR: The directory %s does not exist!\nCreate this directory to run quick-note for this user.\n", user_directory_path);
+	exit(40);
+}
 	/**********************************************************
 	* Print out QN version info and Current Date and Time here:
 	***********************************************************/
-	printf("\nQN (QuickNote) version 1.001. 20190128\n");
+	printf("\nQN (QuickNote) version 1.002 20201101\n");
 	if (argc != 1) {
 		system("tput clear");
 		printf("***************************************************************\n");
@@ -82,12 +81,6 @@ long tcclatestfile;
 		return 1;
 	}
 
-	/*********************************************
-	* Retrieve the pwd from the qn script file 
-	*********************************************/
-	memcpy(uvglob.pwd,DDIRNAME,strlen(DDIRNAME));
-	printf("\nCurrent Working Directory is : %s",uvglob.pwd);
-	
 	make_time_and_date();
 
  	/**********************************************************
@@ -96,7 +89,7 @@ long tcclatestfile;
 	**********************************************************/
 	for (i=0;i<TCC_FILEMAX;i++)
 	{
-		sprintf(uvglob.tempbuf,"%s/tcc%05ld%s",DDIRNAME,i,
+		sprintf(uvglob.tempbuf,"%s/tcc%05ld%s",user_directory_path,i,
 					".txt");
 		fin = fopen(uvglob.tempbuf,"rb");
 		if (fin) 
@@ -114,7 +107,7 @@ long tcclatestfile;
 	/*******************************************
 	* Open up the output text file
 	*******************************************/
-	sprintf(uvglob.tempbuf,"%s/tcc%05ld%s",DDIRNAME,tcclatestfile,
+	sprintf(uvglob.tempbuf,"%s/tcc%05ld%s",user_directory_path,tcclatestfile,
 		".txt");
 	fin = fopen(uvglob.tempbuf,"w");
 	if (ferror(fin))
