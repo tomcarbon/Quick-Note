@@ -3,7 +3,7 @@
   **Quick Note is comprised of the following two programs:**
  
                qn              - make a quick note.
-               qnl (script)    - display all quick notes (qnl="Quick Note Look").
+               qnl (script)    - display all quick notes (qnl="Quick Note List").
         
  **INSTALLATION:**
  
