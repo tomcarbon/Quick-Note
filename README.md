@@ -7,7 +7,7 @@
         
  **INSTALLATION:**
  
- The following has been tested on ubuntu 20.10: 
+ The following has been tested on ubuntu 20.04 and 20.10: 
 
        make
        [SUDO] make install
