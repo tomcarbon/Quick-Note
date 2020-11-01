@@ -9,8 +9,8 @@
  
  The following has been tested on ubuntu 20.10: 
 
-       MAKE
-       [SUDO] MAKE INSTALL
+       make
+       [SUDO] make install
 
 This will copy two executables (qn and qnl) to /usr/local/bin. It will also create a directory in the user's home directory (~/.qn).
 
@@ -23,7 +23,6 @@ Please do give suggestions, advice, and offer MRs for improving quick-note and i
        2) Type qn and hit return.
        3) Type or copy/paste your message and hit return.
       
-   **WARNING** You cannot run qn or qnl as sudo, su, or root; an error message will display.
 
  **TO USE qnl:**
  
@@ -36,24 +35,28 @@ Please do give suggestions, advice, and offer MRs for improving quick-note and i
        Or qnl | grep https | grep github
        etc
 
+ **WARNING** You cannot run qn or qnl as sudo, su, or root; an error message will display.
+
  qn and qnl do not use command line arguments. qn will display help information 
  if any arguments are given to it.
 
  **HOW IT WORKS:**
  
- qn saves a little .txt file in its directory (~/.qn). qnl displays all those files to the screen. 
+Each call to qn saves a .txt file in its directory (~/.qn). The call to qnl displays all those files to sysout (or can be grepped, etc).
  
  **WHY:**
 
-               I believed I was having good thoughts, but I wasn't able to effectively record
-               them before I forgot them, and many thoughts I thought were good were lost. 
-               Often I would have a stream of thoughts, but the quality of that stream was compromised
-               because I was looking for a pencil, or searching for a post-it or notepad, or the pen 
-               was out of ink, or I was writing too slowly. So I wrote this program, around the year 
-               2009. I've been using it ever since, and I thought maybe it's useful to other folks too, so here it is.
+	I believed I was having good thoughts, but I wasn't able to effectively record
+	them before I forgot them, and many thoughts I thought were good were lost. 
+	Often I would have a stream of thoughts, but the quality of that stream was compromised
+	because I was looking for a pencil, or searching for a post-it or notepad, or the pen 
+	was out of ink, or I was writing too slowly. I'd save my idea on a post-it, and then lose 
+	the post-it. So I wrote this program, around the year 2009. I've been using it ever since, 
+	and I thought maybe it's useful to other folks too. So here it is.
 
  
  **ENJOY:**
  
- May you find this program useful.  
+ May you find this program useful. May it prove beneficial for instantly and effectively recording your intuition, whenever it strikes.
+
  Tom Carbon 20201101
