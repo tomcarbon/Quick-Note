@@ -53,7 +53,7 @@ if ((homedir = getenv("HOME")) == NULL) {
 sprintf(user_directory_path,"%s/%s", homedir, USER_DATA_DIR);
 printf("dirname = %s", user_directory_path);
 if (dirExists(user_directory_path)) {
-	printf("directory DOES exist");
+	// do nothing
 } else {
 	printf("\nFATAL ERROR: The directory %s does not exist!\nCreate this directory to run quick-note for this user.\n", user_directory_path);
 	exit(40);
