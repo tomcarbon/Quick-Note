@@ -55,6 +55,10 @@ Each call to qn saves a .txt file in its directory (~/.qn). The call to qnl disp
 	and I thought maybe it's useful to other folks too. So here it is.
 
  
+ **Existing users: move data from 1.001 to 1.002**
+ 
+ Copy the tcc*.txt files from the previous user data directory (the one that qnl utilizes), to ~/.qn directory.
+
  **ENJOY:**
  
  May you find this program useful. May it prove beneficial for instantly and effectively recording your intuition, whenever it strikes.
