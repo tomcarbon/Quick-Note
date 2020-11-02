@@ -1,10 +1,12 @@
  **QUICK NOTE -- save and recall your ideas instantly and reliably**
 
+ ** TLDR: This is an experiment in efficiency for recording one's thoughts. #linuxTerminal #optimization #keyStrokeMinimization**
+
   **Quick Note is comprised of the following two programs:**
  
                qn              - make a quick note.
                qnl (script)    - display all quick notes (qnl="Quick Note List").
-        
+
  **INSTALLATION:**
  
  The following has been tested on ubuntu 20.04 and 20.10: 

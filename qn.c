@@ -55,7 +55,7 @@ printf("dirname = %s", user_directory_path);
 if (dirExists(user_directory_path)) {
 	// do nothing
 } else {
-	printf("\nFATAL ERROR: The directory %s does not exist!\nCreate this directory to run quick-note for this user.\n", user_directory_path);
+	printf("\nFATAL ERROR: The directory %s does not exist!\nCreate this directory to enable quick-note for this user.\nsudo/su/root is not allowed for qn.", user_directory_path);
 	exit(40);
 }
 	/**********************************************************
