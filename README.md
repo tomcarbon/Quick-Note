@@ -1,6 +1,6 @@
  **QUICK NOTE -- save and recall your ideas instantly and reliably**
 
- ** TLDR: This is an experiment in efficiency for recording one's thoughts. #linuxTerminal #optimization #keyStrokeMinimization**
+**TLDR: This is an experiment in efficiency for recording one's thoughts. #linuxTerminal #optimization #keyStrokeMinimization**
 
   **Quick Note is comprised of the following two programs:**
  
