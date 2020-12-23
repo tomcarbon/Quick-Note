@@ -18,6 +18,7 @@
 #include <sys/stat.h>
 #include <pwd.h>
 
+#define VVERSION	"1.003"
 #define USER_DATA_DIR ".qn"
 #define TCC_FILEMAX	99999	// # files to have for tcc00000.txt
 

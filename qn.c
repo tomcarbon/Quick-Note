@@ -30,8 +30,7 @@
 * because I was looking for a pencil, or searching for a post-it or notepad, or the pen was out of ink, or
 * I was writing too slowly. So I wrote this program, sometime before the year 2009, and wrote this intro today.
 *
-* May you find it useful. Tom Carbon 20201101
-* Tip Jar: https://dogepal.com/index.html?DPC=TCARBON#DPC
+* May you find it useful. Tom Carbon 20201223
 *************************************************************************/
 #define MMAIN 1
 #include "stuff.h"
@@ -40,46 +39,104 @@
 int main(int argc, char *argv[])
 {
 long i;
+long x;
 FILE *fin;
 char *pret;
 long tcclatestfile;
 char user_directory_path[500];
+char saved_string[500];
 const char *homedir;
 
-if ((homedir = getenv("HOME")) == NULL) {
-    homedir = getpwuid(getuid())->pw_dir;
-}
+	memset(saved_string,0x00, 500);
 
-sprintf(user_directory_path,"%s/%s", homedir, USER_DATA_DIR);
-printf("dirname = %s", user_directory_path);
-if (dirExists(user_directory_path)) {
-	// do nothing
-} else {
-	printf("\nFATAL ERROR: The directory %s does not exist!\nCreate this directory to enable quick-note for this user.\nsudo/su/root is not allowed for qn.", user_directory_path);
-	exit(40);
-}
-	/**********************************************************
-	* Print out QN version info and Current Date and Time here:
-	***********************************************************/
-	printf("\nQN (QuickNote) version 1.002 20201101\n");
-	if (argc != 1) {
-		system("tput clear");
-		printf("***************************************************************\n");
-		printf("***************************************************************\n");
-		printf("***   QN TAKES NO ARGUMENTS. WELCOME TO THE HELP BLURB.     ***\n");
-		printf("***************************************************************\n");
-		printf("***************************************************************\n");
-		printf("* How to use qn: ");
-		printf("\n* 	1) Open a terminal window (e.g.: Ctl+Atl+T).");
-		printf("\n* 	2) Type qn and hit return.");
-		printf("\n* 	3) Type or copy/paste your message and hit return.");
-		printf("\n*");
-		printf("\n* To use qnl:");
-		printf("\n* 	1) Open a terminal window.");
-		printf("\n* 	2) Type qnl and hit return. ");
-		printf("\n* 	3) All of your qn messages will be displayed.\n");
-		return 1;
+	if ((homedir = getenv("HOME")) == NULL) {
+	    homedir = getpwuid(getuid())->pw_dir;
 	}
+
+	printf("\nQN (QuickNote) (v%s) -h for help",VVERSION);
+	sprintf(user_directory_path,"%s/%s", homedir, USER_DATA_DIR);
+	if (dirExists(user_directory_path)) {
+		// do nothing
+	} else {
+		printf("\nFATAL ERROR: The directory %s does not exist!\nCreate this directory to enable quick-note for this user.\nsudo/su/root is not allowed for qn.", user_directory_path);
+		exit(40);
+	}
+
+	for (i=0; i<argc; i++) {
+		if (!memcmp("--version", argv[i], 9) ||
+		    !memcmp("-version", argv[i], 8) ||
+		    !memcmp("-v", argv[i], 2)) {
+			printf("\n%s\n",VVERSION);
+			return 0;
+		} 
+		else if (!memcmp("--info", argv[i], 6) ||
+		    !memcmp("-info", argv[i], 5) ||
+		    !memcmp("-i", argv[i], 2)) {
+			printf("\nVERSION: %s", VVERSION);
+			printf("\nHOMEDIR: %s", homedir);
+			printf("\nUSER_DATA_DIR: %s", USER_DATA_DIR);
+			printf("\nUSER DIRECTORY PATH: %s", user_directory_path);
+			printf("\n");
+			return 0;
+		}
+		else if (!memcmp("--list", argv[i], 6) ||
+		    !memcmp("-list", argv[i], 5) ||
+		    !memcmp("-l", argv[i], 2)) {
+			printf("\nHere is the list of your quick notes:");
+			printf("\n*************************************\n");
+			execl("qnl","","",NULL);
+			return 0;
+			
+		}
+		else if (!memcmp("--save", argv[i], 6) ||
+		    !memcmp("-save", argv[i], 5) ||
+		    !memcmp("-s", argv[i], 2)) {
+			if (i == argc-1) {
+				printf("\nERROR: No message provided for --save option.\n");
+				return 1;
+			}
+			for (x=i+1; x<argc; x++) {
+				if (x == i+1) {
+					sprintf(saved_string,"%s", argv[x]);
+				}
+				else {
+					sprintf(saved_string,"%s %s", saved_string, argv[x]);
+				}
+			}
+			printf("\nSaving the following as a Quick-Note: %s", saved_string);
+		}
+		else if (!memcmp("--commands", argv[i], 10) ||
+		    !memcmp("-commands", argv[i], 9) ||
+		    !memcmp("--help", argv[i], 6) ||
+		    !memcmp("-help", argv[i], 5) ||
+		    !memcmp("-?", argv[i], 2) ||
+		    !memcmp("-h", argv[i], 2)) {
+			printf("\n***************************************************************");
+			printf("\n***************************************************************");
+			printf("\n*** QUICK-NOTE (v%s)",VVERSION);
+			printf("\n***************************************************************");
+			printf("\n***************************************************************");
+			printf("\n* How to use qn: ");
+			printf("\n* 	1) Open a terminal window.");
+			printf("\n* 	2) Type qn and hit return.");
+			printf("\n* 	3) Type or copy/paste your message and hit return.");
+			printf("\n*");
+			printf("\n* To use qnl:");
+			printf("\n* 	1) Open a terminal window.");
+			printf("\n* 	2) Type qnl and hit return. ");
+			printf("\n* 	3) All of your qn messages will be displayed.");
+			printf("\n*");
+			printf("\n* Quick-Note also takes the following input parameters:");
+			printf("\n*   -h, --help       This help screen");
+			printf("\n*   -i, --info       Display program information");
+			printf("\n*   -l, --list       List all Quick-Note messages (same as qnl)");
+			printf("\n*   -s, --save       Save everything after this param as a Quick Note message");
+			printf("\n*   -v, --version    Display version information");
+			printf("\n");
+			return 1;
+		}
+	}
+
 
 	make_time_and_date();
 
@@ -119,13 +176,18 @@ if (dirExists(user_directory_path)) {
 	/********************************************************
 	* Read in the quick note, and write it
 	*********************************************************/
-	printf("Write what you want to write below:\n:");
-	pret = fgets(uvglob.tempbuf,255,stdin);
-	if (!pret)
-	{
-		printf("\nERROR: Cannot read in user Quick Note!");
-		fclose(fin);
-		exit (40);
+	if (saved_string[0] != 0x00) {		// --save option
+		sprintf(uvglob.tempbuf, "%s\n", saved_string);
+	}
+	else {
+		printf("Write what you want to write below:\n:");
+		pret = fgets(uvglob.tempbuf,255,stdin);
+		if (!pret)
+		{
+			printf("\nERROR: Cannot read in user Quick Note!");
+			fclose(fin);
+			exit (40);
+		}
 	}
 
 	fprintf(fin,"%s",uvglob.tempbuf);

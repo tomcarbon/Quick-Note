@@ -9,7 +9,7 @@
 
  **INSTALLATION:**
  
- The following has been tested on ubuntu 20.04 and 20.10: 
+ The following has been tested on ubuntu (20.04 and 20.10), and pi3 raspbian (32bit): 
 
        make
        [SUDO] make install
@@ -39,8 +39,7 @@ Please do give suggestions, advice, and offer MRs for improving quick-note and i
 
  **WARNING** You cannot run qn or qnl as sudo, su, or root; an error message will display.
 
- qn and qnl do not use command line arguments. qn will display help information 
- if any arguments are given to it.
+Type 'qn -h' to display help options and commands.
 
  **HOW IT WORKS:**
  
@@ -65,4 +64,4 @@ Each call to qn saves a .txt file in its directory (~/.qn). The call to qnl disp
  
  May you find this program useful. May it prove beneficial for instantly and effectively recording your intuition, whenever it strikes.
 
- Tom Carbon 20201101
+ Tom Carbon 20201223
