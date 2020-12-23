@@ -96,14 +96,12 @@ const char *homedir;
 				return 1;
 			}
 			for (x=i+1; x<argc; x++) {
-				if (x == i+1) {
-					sprintf(saved_string,"%s", argv[x]);
-				}
-				else {
-					sprintf(saved_string,"%s %s", saved_string, argv[x]);
+				memcpy((char *)&saved_string[strlen(saved_string)], argv[x], strlen(argv[x]));
+				if (x+1 != argc) {
+					saved_string[strlen(saved_string)] = ' ';
 				}
 			}
-			printf("\nSaving the following as a Quick-Note: %s", saved_string);
+			printf("\nSaving the following as a Quick-Note: \n%s\n", saved_string);
 		}
 		else if (!memcmp("--commands", argv[i], 10) ||
 		    !memcmp("-commands", argv[i], 9) ||
