@@ -41,11 +41,11 @@ Please do give suggestions, advice, and offer MRs for improving quick-note and i
 
 **Typing 'qn -h' displays available help options and commands:**
 
-*   -h, --help       The help screen
-*   -i, --info       Display program information
-*   -l, --list       List all Quick-Note messages (same as qnl)
-*   -s, --save       Save everything after this param as a Quick Note message. For example, 'qn -s This is a test' will save the message 'This is a test'.
-*   -v, --version    Display version information
+*   -h, --help       			The help screen
+*   -i, --info       			Display program information
+*   -l, --list       			List all Quick-Note messages (same as qnl)
+*   -s, --save       			Save everything after this param as a Quick Note message. For example, 'qn -s This is a test' will save the message 'This is a test'.
+*   -v, --version    			Display version information
 
 
  **HOW IT WORKS:**
